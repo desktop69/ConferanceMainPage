@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { DetailComponent } from './detail/detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderFrontComponent } from './header-front/header-front.component';
+import { FooterFrontComponent } from './footer-front/footer-front.component';
 
 
 @NgModule({
@@ -13,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     MainComponent,
     DetailComponent,
+    HeaderFrontComponent,
+    FooterFrontComponent,
     
   ],
   imports: [
