@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio Details - Presento Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <style>
+    .center {
+      margin: auto;
+      width: 60%;
+      border: 3px solid #bb1212;
+      padding: 10px;
+    }
+  </style>
+
+
+  <!-- =======================================================
+  * Template Name: Presento - v3.9.1
+  * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Conference Details</li>
+        </ol>
+        <h2>Conference Details</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="/assets/img/portfolio/portfolio-details-1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="/assets/img/portfolio/portfolio-details-2.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="/assets/img/portfolio/portfolio-details-3.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Conference information</h3>
+              <ul>
+                <li><strong>Title:</strong>{{currentConference.title}} </li>
+                <li><strong>Date:</strong>{{currentConference.date}}</li>
+                <li><strong>Location/Address:</strong>{{currentConference.location}}</li>
+                <li><strong>Number of available places:</strong>{{currentConference.nbPlace}}</li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Description</h2>
+              <p>
+                {{currentConference.description}}
+
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Participate</h2>
+          <p></p>
+        </div>
+
+
+
+        <div class="center">
+
+          <div class="col-lg">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col form-group">
+                  <p><strong>Name</strong></p>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your full Name" required>
+                </div>
+                <div class="col form-group">
+                  <p><strong>Phone Number</strong></p>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Phone Number" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <p><strong>E-mail</strong></p>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="E-mail" required>
+              </div>
+              <div class="form-group">
+                <p><strong>Adress</strong></p>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Adress" required>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Participate</button></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main><!-- End #main -->
+
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+</body>
+
+</html>
