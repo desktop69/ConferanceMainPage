@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Conference } from '../model/conference.model';
+import { Conferance } from '../model/conference.model';
+import { Participant } from '../model/Participant.model';
 
 
-const httpOptions = {
-  headers: new HttpHeaders( {'Content-Type': 'application/json'} )
-};
+
+const httpOptions = {headers: new HttpHeaders( {'Content-Type': 'application/json'} )};
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,19 +15,55 @@ const httpOptions = {
 
 
 export class ConferenceService {
+  conferanceslist: Conferance[];
+  conferance! : Conferance;
   apiURL: string = 'http://localhost:8090/Conference/api';
- 
+  apiURLpart: string = 'http://localhost:8090/Conference/api/part';
+  apiURLCon: string = 'http://localhost:8090/Conference/con';
+
   constructor(private http : HttpClient) {
-  }
-  listeConference(): Observable<Conference[]>{
-  return this.http.get<Conference[]>(this.apiURL);
-  }
+    this.conferanceslist = [];
+   }
+   
+   ListConferance ():Observable<Conferance[]>{
+    return this.http.get<Conferance[]>(this.apiURL)
+   }
 
-
-  conferences!: Conference[];
-
-  consulterConference(id: number): Observable<Conference> {
+   consulterConference(id: number): Observable<Conferance> {
     const url = `${this.apiURL}/${id}`;
-    return this.http.get<Conference>(url);
+    return this.http.get<Conferance>(url);
     }
+
+
+    AddParticipant(part :Participant):Observable<Participant>{
+      return this.http.post<Participant>(this.apiURLpart, part , httpOptions)
+    }
+
+      /*image functions*/
+  
+      uploadImage(file : File , filename : string) {
+
+        const imageFormData = new FormData();
+        imageFormData.append('image', file, filename);
+        const url = `${this.apiURL + "/image/upload"}`
+        return this.http.post(url ,imageFormData)
+      }
+    
+    
+      loadImage(id : number) {
+  
+        const url = `${this.apiURL + "/image/get/info"}/${id}`
+        return this.http.get(url) ;
+      }
+    
+      deleteImage(idImage : number) {
+        const url = `${this.apiURL + "/image/delete"}/${idImage}`
+        return this.http.delete(url)
+      }
+      /******************* */
+
+
+
+
+
 }  
